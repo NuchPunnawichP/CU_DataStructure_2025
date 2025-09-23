@@ -4,33 +4,22 @@
 using namespace std;
 void insert_into_sv(map<int,int> &v, int pos, int value) {
 //your code here
-    v[-1] = -1;
-
-    if(v.count(pos))
+    vector<pair<int,int>> temp;
+    auto it = v.lower_bound(pos);
+    
+    while(it != v.end())
     {
-        auto it1 = v.end();
-        --it1;
-
-        auto it2 = v.find(pos);
-        --it2;
-
-        for(it1 ; it1 != it2 ; it1--)
-        {
-            int p = it1->first;
-            int val = it1->second;
-
-            v.erase(it1);
-            v[p + 1] = val;
-        }
-
-        v[pos] = value;
+        temp.push_back({it->first + 1, it->second});
+        it = v.erase(it);
     }
-    else
+    v.insert({pos, value});
+    
+    for(auto &p : temp)
     {
-        v[pos] = value;
+        v.insert(p);
     }
-    v.erase(v.begin());
 }
+
 int main() {
 ios_base::sync_with_stdio(false);cin.tie(0);
 int n;
