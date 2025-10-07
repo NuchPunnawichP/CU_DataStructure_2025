@@ -1,14 +1,12 @@
 #ifndef __STUDENT_H_
 #define __STUDENT_H_
 
-// ไลบรารีที่จำเป็นสำหรับการแก้ปัญหา
 #include "vector.h"
 #include <map>
 #include <algorithm>
 
 template <typename T>
 void CP::vector<T>::uniq(std::vector<CP::vector<T>::iterator> itrs) {
-    // ฟังก์ชันนี้จะลบข้อมูลซ้ำออกจาก vector โดยเก็บไว้แค่ตัวที่อยู่ใกล้ begin() มากที่สุด
     
     // ขั้นตอนที่ 1: แปลง iterator เป็น index เพื่อความสะดวกในการจัดการ
     std::map<T, int> first_occurrence; // เก็บ index ของการพบครั้งแรกของแต่ละค่า
