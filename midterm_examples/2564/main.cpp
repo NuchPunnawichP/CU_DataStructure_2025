@@ -14,6 +14,9 @@ void solve()
     // 1.2
     map<string, pair<vector<int>, vector<string>>> earbud;
 
+    // 1.3
+    
+
 };
 
 int main()
