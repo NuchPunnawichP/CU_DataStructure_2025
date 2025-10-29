@@ -13,7 +13,7 @@ size_t CP::priority_queue<T,Comp>::get_rank(size_t pos) const {
 
   for(size_t i=0 ; i<mSize ; i++)
   {
-    if(comp(mData[pos], mData[i]))
+    if(mLess(mData[pos], mData[i]))
       rank++;
   }
 
