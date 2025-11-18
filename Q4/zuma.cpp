@@ -41,7 +41,7 @@ void solve()
     }
 
     // play
-    // Node *tmp = new Node();
+    Node *tmp = new Node();
 }
 
 int main()
